@@ -1,13 +1,8 @@
 const mysql = require('mysql')
+const {dbConfig} = require('../config')
 
 // 创建连接池
-const pool = mysql.createPool({
-    host: '',
-    user: '',
-    password: '',
-    database: '',
-    connectionLimit: 20
-})
+const pool = mysql.createPool(dbConfig)
 
 // 自定义查询方法
 module.exports.query = (...args) => {
