@@ -1,9 +1,9 @@
 module.exports = {
     dbConfig: {
-        host: '',
-        user: '',
-        password: '',
-        database: '',
+        host: 'localhost',
+        user: 'root',
+        password: 'root',
+        database: 'dh_user',
         connectionLimit: 20
     }
 }

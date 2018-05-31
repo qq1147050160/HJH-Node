@@ -6,18 +6,20 @@ module.exports.showLogin = (req, res) => {
 
 module.exports.login = (req, res) => {
     
-    const body = req.body
+    const body = req.body// 用户的数据
 
-    login.email(body.email, (err, user) => {
+    login.username(body.username, (err, login) => {
         if (err) {
+            console.log('1');
             return res.status(500).json({
                 'error': err.message
             })
         }
-        res.status(200).json({
-        'code': 1,
-        'message': '成功'
-        })
-    })
-    
+        if (login) {
+            res.status(200).json({
+                'code': 1,
+                'message': '成功'
+            })   
+        }
+    })  
 }
