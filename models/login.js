@@ -10,9 +10,9 @@ module.exports.email = (email, callback) => {
     })
 }
 
-module.exports.username = (username, callback) => {
-    const sql = 'SELECT `userName` FROM t_user WHERE `userName` = ?'
-    query(sql, [username], (err, res) => {
+module.exports.userVerification = (userdata, callback) => {
+    const sql = 'SELECT `username`,`password` FROM t_user WHERE `username` ="' + userdata.username + '" AND `password` = "'+userdata.password+'"'
+    query(sql, (err, res) => {
         if (err) {
             return callback(err)
         }

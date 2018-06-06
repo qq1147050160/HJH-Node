@@ -40,3 +40,4 @@ express
 
 ##框架插件
 body-parser 解析post请求
+blueimp-md5 md5加密用 let md5 = md5(vul)

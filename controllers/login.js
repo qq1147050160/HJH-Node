@@ -1,4 +1,5 @@
 const login = require('../models/login')
+const md5 = require('blueimp-md5')
 
 module.exports.showLogin = (req, res) => {
     res.render('login.html')
@@ -8,9 +9,8 @@ module.exports.login = (req, res) => {
     
     const body = req.body// 用户的数据
 
-    login.username(body.username, (err, login) => {
+    login.userVerification(body, (err, login) => {
         if (err) {
-            console.log('1');
             return res.status(500).json({
                 'error': err.message
             })
